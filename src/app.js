@@ -60,6 +60,8 @@ citySearch.addEventListener("submit", showCity);*/
 
 function showWeather(response) {
   let cityName = document.querySelector("h1");
+  let dateElement = document.querySelector("#date");
+   let iconElement = document.querySelector("#icon");
   cityName.innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -71,6 +73,14 @@ function showWeather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+  
 }
 
 function searchCity(city) {
