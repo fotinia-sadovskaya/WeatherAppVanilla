@@ -99,14 +99,6 @@ div.temperature {
   top: 0px;
 }
 
-.emojis {
-  font-size: 36px;
-}
-
-.degree-min.degree-max {
-  font-weight: 600;
-}
-
 .map {
   display: block;
   margin: 20px auto;
